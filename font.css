@@ -1,0 +1,30 @@
+@font-face {
+	font-family: 'db-manager';
+	src: url('fonts/db-manager.eot?7g8tjj');
+	src: url('fonts/db-manager.eot?7g8tjj#iefix') format('embedded-opentype'), url('fonts/db-manager.ttf?7g8tjj') format('truetype'), url('fonts/db-manager.woff?7g8tjj') format('woff'), url('fonts/db-manager.svg?7g8tjj#db-manager') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="dbm-"], [class*=" dbm-"] {
+	font-family: 'db-manager';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.dbm-Database:before {
+	font-family: 'db-manager';
+	content: "\e900";
+}
+
+#adminmenu #toplevel_page_dbm-options div.wp-menu-image::before {
+	font-family: 'db-manager';
+	content: '\e900';
+}
