@@ -11,27 +11,27 @@ function load_custom_admin_styles() {
 	full_enqueue( $local, $style, 'custom_icon', 'font.css' );
 }
 
-function dbm_install()
+function pm_install()
 {
 
 }
 
-function dbm_uninstall()
+function pm_uninstall()
 {
 
 }
 
-function dbm_admin_menu(){
+function pm_admin_menu(){
 	add_menu_page(
-    'Database Management Plugin',
-    'Database Management',
+    'Product Management Plugin',
+    'Product Management',
     'manage_options',
-    'dbm-options',
-    'dbm_options_page'
+    'pm-options',
+    'pm_options_page'
   );
 }
 
-function dbm_options_page(){
+function pm_options_page(){
 	if( !current_user_can( 'manage_options' ))
 	{
 		wp_die( 'You do not have sufficient permissions to access this page.' );
@@ -44,7 +44,7 @@ function generate_options_page(){
 	$db_name = get_db_name();
 	full_enqueue( $custom, $script, 'jquery', "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" );
 	full_enqueue( $local, $script, 'block-ui', 'jquery-plugins/jquery.blockUI.js');
-	full_enqueue( $local,  $style,  'dbm-admin-style', 'style.css' );
+	full_enqueue( $local,  $style,  'pm-admin-style', 'style.css' );
 
 	$ajaxData = [
 		'ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -52,8 +52,8 @@ function generate_options_page(){
 		'wpdb_name' => $db_name,
 		'wpdb_tables' => get_table_names()
 	];
-	localizeScript( $local, 'dbm-admin-script', 'client-functions.js', 'ajax_obj', $ajaxData );
-	//full_enqueue($local, $script,  'dbm-admin-script', 'client-functions.js');
+	localizeScript( $local, 'pm-admin-script', 'client-functions.js', 'ajax_obj', $ajaxData );
+	//full_enqueue($local, $script,  'pm-admin-script', 'client-functions.js');
 
 	echo generate_top_menu();
 	echo generate_input_area();

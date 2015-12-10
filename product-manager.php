@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Database Manager
+Plugin Name: Product Manager
 Plugin URI:  http://pemerkel.onucs.org
 Description: Gives you the ability to create and manage tables within your wordpress database for a single site setup.
 Version:     0.01
@@ -9,7 +9,7 @@ Author URI:  http://pemerkel.onucs.org
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Domain Path: /languages
-Text Domain: db-manager
+Text Domain: product-manager
 */
 
 if( is_admin() ){
@@ -17,7 +17,7 @@ if( is_admin() ){
 	require "ajax-handler.php";
 
 	//Hook in the admin menu
-	add_action( 'admin_menu', 'dbm_admin_menu' );
+	add_action( 'admin_menu', 'pm_admin_menu' );
 
 	//Hook for custom icon
 	add_action( 'admin_enqueue_scripts', 'load_custom_admin_styles' );
